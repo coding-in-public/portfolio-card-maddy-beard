@@ -1,0 +1,164 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  /* fonts */
+  --fs--400: 22px;
+  --fs--600: 30px;
+  --fs--800: 60px;
+
+  --fw--reg: 400;
+  --fw--semi: 600;
+  --fw--bold: 700;
+
+  --lh--1-2: 1.2;
+
+  /* colors */
+  --text: #000;
+  --bkg: #fff;
+  --accent: #c1cce7;
+
+  /* rounding */
+  --round--sm: 5px;
+  --round--md: 20px;
+
+  /* shadows */
+  --shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+
+  /* spacing */
+  --space--xl: 40px;
+  --space--lg: 35px;
+  --space--md: 20px;
+  --space--sm: 10px;
+  --space--xs: 5px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--fw--reg);
+  line-height: var(--lh--1-2);
+  font-size: var(--fs--400);
+  background-color: var(--bkg);
+  color: var(--text);
+  padding: var(--space--xl);
+  display: grid;
+  place-content: center;
+}
+
+/* spacing utils */
+.flex--xs {
+  display: flex;
+  gap: var(--space--xs);
+}
+.flex--sm {
+  display: flex;
+  gap: var(--space--sm);
+}
+.flex--md {
+  display: flex;
+  gap: var(--space--md);
+}
+.flex--lg {
+  display: flex;
+  gap: var(--space--lg);
+}
+.flex--xl {
+  display: flex;
+  gap: var(--space--xl);
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.grid--xs {
+  display: grid;
+  gap: var(--space--xs);
+}
+.grid--sm {
+  display: grid;
+  gap: var(--space--sm);
+}
+.grid--md {
+  display: grid;
+  gap: var(--space--md);
+}
+.grid--lg {
+  display: grid;
+  gap: var(--space--lg);
+}
+.grid--xl {
+  display: grid;
+  gap: var(--space--xl);
+}
+
+/* text utils */
+.h2,
+.h3 {
+  font-weight: var(--fw--bold);
+  font-size: var(--fs--800);
+}
+
+.h4 {
+  font-weight: var(--fw--reg);
+  font-size: var(--fs--600);
+}
+
+hr {
+  background-color: var(--accent);
+  border: none;
+  height: 2px;
+}
+
+/* card */
+.card {
+  display: grid;
+  gap: var(--space--xl);
+  background-color: var(--bkg);
+  box-shadow: var(--shadow);
+  border-radius: var(--round--md);
+  max-width: 800px;
+}
+
+.card_image {
+  border-radius: var(--round--md) var(--round--md) 0 0;
+}
+
+.card_content {
+  padding: 0 var(--space--xl) var(--space--xl);
+  display: grid;
+  gap: var(--space--lg);
+}
+
+.card strong {
+  font-weight: var(--fw--semi);
+}
+
+.card a {
+  color: var(--text);
+  border-radius: var(--round--sm);
+}
+
+.card a:hover {
+  opacity: 0.6;
+}
+
+.card a:focus {
+  outline: 2px solid transparent;
+}
+
+.card a:focus-visible {
+  box-shadow: 0 0 0 3px var(--bkg), 0 0 0 6px var(--accent);
+}
+
+[data-after]::after {
+  content: attr(data-after);
+}
